@@ -8,18 +8,20 @@
   },
   "scripts": {
     "build": "tsc",
-    "start:dev": "nodemon src/server.ts",
-    "start:prod": "node dist/server.js",
-    "prepare": "husky",
+    "dev": "nodemon src/server.ts",
+    "start": "node dist/server.js",
+    "prepare": "[ \"$NODE_ENV\" = 'production' ] || husky",
     "test": "jest"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.2",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "express-validator": "^7.3.1"
   },
   "devDependencies": {
+    "prisma": "^6.19.2",
     "@eslint/js": "^9.39.3",
     "@types/cookie-parser": "^1.4.10",
     "@types/express": "^5.0.6",
