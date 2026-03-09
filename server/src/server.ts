@@ -1,16 +1,19 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import notesRoutes from './routes/notes-routes';
 
 dotenv.config();
 
-const app= express();
-
-const PORT = process.env.PORT || 3011;
+const PORT = process.env.PORT || 8086;
+const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
+
+app.get("/health", (req: Request, res: Response) => {
+    res.status(200).json({ message: "Server is running" });
+});
 
 app.use(notesRoutes);
 
