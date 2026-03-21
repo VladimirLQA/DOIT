@@ -6,3 +6,17 @@
 **/generated
 
 **/pgdata
+
+# Local .terraform directory
+.terraform/
+
+# State files
+*.tfstate
+*.tfstate.backup
+
+# Sensitive variable files (if you use these)
+*.tfvars
+*.tfvars.json
+
+# Provider version lock file
+.terraform.lock.hcl
