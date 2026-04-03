@@ -21,7 +21,7 @@ terraform/
 ```
 
 - [x] Bootstrap — S3 state bucket + DynamoDB lock table
-- [ ] VPC module — VPC, public/private subnets, IGW, NAT gateway, route tables
+- [x] VPC module — VPC, public/private subnets, IGW, NAT gateway, route tables
 - [ ] Security Groups — for ALB, EC2, RDS, and Bastion
 - [ ] Bastion module — jump host for SSH access to private EC2
 - [ ] EC2 module — app server in private subnet
