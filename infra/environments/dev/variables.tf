@@ -1,4 +1,3 @@
-
 variable "project_name" {
   type = string
 }
@@ -22,3 +21,8 @@ variable "private_subnet_cidrs" {
 variable "availability_zones" {
   type = list(string)
 }
+
+variable "bastion_allowed_cidrs" {
+  type = string
+}
+

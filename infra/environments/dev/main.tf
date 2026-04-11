@@ -29,3 +29,17 @@ module "vpc" {
   private_subnet_cidrs = var.private_subnet_cidrs
   availability_zones   = var.availability_zones
 }
+
+module "security_groups" {
+  source = "../../modules/security_groups"
+
+  project_name          = var.project_name
+  environment           = var.environment
+  app_port              = 8086
+  vpc_id                = module.vpc.vpc_id
+  bastion_allowed_cidrs = var.bastion_allowed_cidrs
+  tags = {
+    Environment = var.environment
+    Project     = var.project_name
+  }
+}
